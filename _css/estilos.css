@@ -4,6 +4,8 @@
 }
 
 *{
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
 }
 input {
@@ -35,7 +37,7 @@ input[type="number"]::-webkit-inner-spin-button {
     align-items: center;
     padding: 15px;
     /*background: #ebeeef;*/
-    background-image: url("../_img/bg.jpg");
+    background-image: url("../_img/bg2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -119,7 +121,7 @@ input[type="number"]::-webkit-inner-spin-button {
     text-align: right;
     position: absolute;
     top: 0px;
-    left: -125px;
+    left: -145px;
     width: 120px;
 }
 
@@ -132,6 +134,7 @@ input[type="number"]::-webkit-inner-spin-button {
     width: 100%;
     background: transparent;
     padding: 0 5px;
+
 }
 
 .focus-input {
