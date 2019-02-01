@@ -300,6 +300,128 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 /*------------------------------------------------------------------
+[ Equipos ] */
+
+.container-equipos {
+    width: 100%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /*background: #ebeeef;*/
+    background-image: url("../_img/bg2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.wrap-equipos {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.equipos-title {
+    background-image: url(../_img/loginbg.jpg);
+    width: 30vw;
+    height: 12vh;
+    min-width: 360px;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    padding: 2vh;
+}
+
+.equipos-title::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(54,84,99,0.6);
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+
+}
+
+.equipos-title-1 {
+    font-family: Sport;
+    font-size: 6vh;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.container-equipos-btn {
+    width: 100%;
+    position: fixed;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    bottom: 0;
+}
+
+.equipos-btn {
+    width: 30vw;
+    outline: none;
+    border: none;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    min-width: 160px;
+    height: 50px;
+    background-color: #bc612c;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+
+    font-family: Sport;
+    font-size: 2vh;
+    color: #fff;
+    line-height: 1.2;
+
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.equipos-btn:hover{
+    cursor: pointer;
+}
+
+/*------------------------------------------------------------------
 [ Responsive ]*/
 
 @media (max-width: 576px) {
