@@ -16,10 +16,11 @@
     <title>Panel BasketApp</title>
 </head>
 <body>
+<a href="cerrar_sesion.php" class="fixedButton">Cerrar</a>
 <div class="container-login">
     <section class="wrap-login">
         <div class="dashboard-title">
-					<span class="dashboard-title-1">
+            <span class="dashboard-title-1">
 						Panel de control
 					</span>
         </div>

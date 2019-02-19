@@ -13,6 +13,9 @@
 </head>
 <body>
     <div class="container-login">
+        <div class="fixedErrorMsg">
+            <p id="error" class="oculto">Login incorrecto</p>
+        </div>
         <section class="wrap-login">
             <div class="login-form-title">
 					<span class="login-form-title-1">
@@ -32,9 +35,6 @@
                 </div>
                 <div class="container-login-form-btn">
                     <input type="submit" class="login-form-btn" name="login" value="Login">
-                </div>
-                <div>
-                    <p id="error" class="oculto">Login incorrecto</p>
                 </div>
             </form>
         </section>

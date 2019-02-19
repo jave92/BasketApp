@@ -412,6 +412,23 @@ input[type="number"] {
 .oculto{
     visibility: hidden;
 }
+
+.fixedButton{
+    color: white;
+    font-size: 3vh;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.fixedErrorMsg{
+    color: white;
+    text-transform: uppercase;
+    font-size: 3vh;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    text-align: center;
+}
 /*------------------------------------------------------------------
 [ Responsive ]*/
 @media all and (min-width: 900px) {

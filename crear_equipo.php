@@ -58,7 +58,7 @@
 
         if(isset($_POST["guardar"])){
             if(!empty($_POST["equipo"]) && !empty($_POST["ciudad"]) && 
-                !empty($_POST["socios"]) && !empty($_POST["anio"]) &&){
+                !empty($_POST["socios"]) && !empty($_POST["anio"])){
                 
                 $database->insert("equipos", ["nombre"=>$_POST["equipo"], "ciudad"=>$_POST["ciudad"], "numSocios"=>$_POST["socios"], "anio"=>$_POST["anio"]]);
             }
