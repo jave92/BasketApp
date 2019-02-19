@@ -1,5 +1,11 @@
 <!doctype html>
 <html lang="es">
+    <?php
+    session_start();
+    if(!isset($_SESSION["login"])){
+        header('Location:login.php');
+    }
+    ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
