@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="_css/estilos.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="_js/jquery-3.1.1.min.js"></script>
+    <script src="_js/funciones.js"></script>
     <title>Login BasketApp</title>
 </head>
 <body>
@@ -31,8 +33,44 @@
                 <div class="container-login-form-btn">
                     <input type="submit" class="login-form-btn" name="login" value="Login">
                 </div>
+                <div>
+                    <p id="error" class="oculto">Login incorrecto</p>
+                </div>
             </form>
         </section>
     </div>
+    <?php
+    require 'Medoo.php';
+    use Medoo\Medoo;
+
+    session_start();
+    if(isset($_SESSION["login"])){
+        header("Location: control_panel.php");
+    }
+
+    $database = new Medoo([
+        'database_type' => 'mysql',
+        'database_name' => 'proyecto_hlc',
+        'server' => 'localhost',
+        'username' => 'root',
+        'password' => ''
+    ]);
+
+    if(isset($_POST["login"])){
+        $login = $_POST["username"];
+        $password = $_POST["pass"];
+
+        $resultado = $database->select("usuarios", "*", ["login"=>$login, "password"=>$password]);
+
+        if(!empty($resultado)){
+            $_SESSION["login"]=$login;
+            header("Location: control_panel.php");
+        }else{
+            echo "<script type=\"text/javascript\">";
+            echo "mostrarError();";
+            echo "</script>";
+        }
+    }
+    ?>
 </body>
 </html>
