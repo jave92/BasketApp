@@ -12,32 +12,6 @@
     <title>Login BasketApp</title>
 </head>
 <body>
-    <?php
-        require 'Medoo.php';
-        use Medoo\Medoo;
-
-        $database = new Medoo([
-            'database_type' => 'mysql',
-            'database_name' => 'proyecto_hlc',
-            'server' => 'localhost',
-            'username' => 'root',
-            'password' => ''
-        ]);
-        
-        if(isset($_POST["login"])){
-            $login = $_POST["username"];
-            $password = $_POST["pass"];
-    
-            $resultado = $database->select("usuarios", "*", ["login"=>$login, "password"=>$password]);
-
-            if(!empty($resultado)){
-                session_start();
-                $_SESSION["login"]=$login;
-                header("Location: control_panel.php");
-            }
-        }
-
-    ?>
     <div class="container-login">
         <section class="wrap-login">
             <div class="login-form-title">
