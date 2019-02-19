@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="es">
 <head>
+    <?php
+    require_once ("./_includes/conexion.php");
+    ?>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -10,6 +13,7 @@
     <title>Liga BasketApp</title>
 </head>
 <body>
+<a href="cerrar_sesion.php" class="fixedButton">Cerrar sesión</a>
 <div class="container-login">
     <section class="wrap-login">
         <div class="login-form-title">

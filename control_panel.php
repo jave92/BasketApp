@@ -1,12 +1,9 @@
 <!doctype html>
 <html lang="es">
-    <?php
-    session_start();
-    if(!isset($_SESSION["login"])){
-        header('Location:login.php');
-    }
-    ?>
 <head>
+    <?php
+    require_once ("./_includes/conexion.php");
+    ?>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -16,7 +13,7 @@
     <title>Panel BasketApp</title>
 </head>
 <body>
-<a href="cerrar_sesion.php" class="fixedButton">Cerrar</a>
+<a href="cerrar_sesion.php" class="fixedButton">Cerrar sesión</a>
 <div class="container-login">
     <section class="wrap-login">
         <div class="dashboard-title">
@@ -25,13 +22,13 @@
 					</span>
         </div>
         <div class="dashboard">
-            <div class="dashboard-liga">
+            <div class="dashboard-liga" onclick="location.href='liga.php'">
                 <span class="dashboard-text">
                     Datos de liga
                 </span>
             </div>
             <div class="dashboard-equipo">
-                <span class="dashboard-text">
+                <span class="dashboard-text" onclick="location.href='equipos.php'">
                     Equipos
                 </span>
             </div>

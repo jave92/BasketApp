@@ -1,5 +1,6 @@
 <?php
-
-$conexion= mysqli_connect("localhost","root","","basket");
-mysqli_set_charset($conexion,"utf8");
+session_start();
+if(!isset($_SESSION["login"])){
+    header('Location:login.php');
+}
 ?>
