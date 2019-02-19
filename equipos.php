@@ -3,6 +3,17 @@
 <head>
     <?php
     require_once ("./_includes/conexion.php");
+    require 'Medoo.php';
+    use Medoo\Medoo;
+
+    $database = new Medoo([
+        'database_type' => 'mysql',
+        'database_name' => 'proyecto_hlc',
+        'server' => 'localhost',
+        'username' => 'root',
+        'password' => ''
+    ]);
+    $result = $database->select("equipos", ["nombre", "ciudad", "numSocios", "anio"]);
     ?>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -20,6 +31,28 @@
             <span class="equipos-title-1">
                 Equipos
             </span>
+        </div>
+        <div class="wrap-tablaEquipos">
+            <table class="tablaEquipos">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Ciudad</th>
+                    <th>Nº Socios</th>
+                    <th>Año</th>
+                    <th></th>
+                </tr>
+                <?php
+                foreach ($result as $fila){
+                    echo "<tr>";
+                    echo "<td>".$fila["nombre"]."</td>";
+                    echo "<td>".$fila["ciudad"]."</td>";
+                    echo "<td>".$fila["numSocios"]."</td>";
+                    echo "<td>".$fila["anio"]."</td>";
+                    echo "<td>Eliminar/Editar</td>";
+                    echo "</tr>";
+                }
+                ?>
+            </table>
         </div>
         <div class="container-equipos-btn">
             <button class="equipos-btn" onclick="location.href='crear_equipo.php'">Crear equipo</button>
