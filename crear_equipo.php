@@ -24,22 +24,22 @@
             <form name="login" action="crear_equipo.php" method="post" class="login-form">
                 <div class="wrap-input" data-validate="Introduce un nombre de liga">
                     <span class="label-input">Nombre</span>
-                    <input class="input" type="text" name="equipo" placeholder="Nombre del equipo">
+                    <input class="input" type="text" name="equipo" placeholder="Nombre del equipo" required>
                     <span class="focus-input"></span>
                 </div>
                 <div class="wrap-input" data-validate="Introduce el año">
                     <span class="label-input">Ciudad</span>
-                    <input class="input" type="text" name="ciudad" placeholder="Nombre de la ciudad">
+                    <input class="input" type="text" name="ciudad" placeholder="Nombre de la ciudad" required>
                     <span class="focus-input"></span>
                 </div>
                 <div class="wrap-input" data-validate="Introduce la descripción">
                     <span class="label-input">Nº de Socios</span>
-                    <input class="input" type="text" name="socios" placeholder="Numero de socios">
+                    <input class="input" type="text" name="socios" placeholder="Numero de socios" required>
                     <span class="focus-input"></span>
                 </div>
                 <div class="wrap-input" data-validate="Introduce la descripción">
                     <span class="label-input">Año</span>
-                    <input class="input" type="text" name="anio" placeholder="Año">
+                    <input class="input" type="text" name="anio" placeholder="Año" required>
                     <span class="focus-input"></span>
                 </div>
                 <div class="container-login-form-btn">
@@ -65,6 +65,10 @@
                 !empty($_POST["socios"]) && !empty($_POST["anio"])){
                 
                 $database->insert("equipos", ["nombre"=>$_POST["equipo"], "ciudad"=>$_POST["ciudad"], "numSocios"=>$_POST["socios"], "anio"=>$_POST["anio"]]);
+
+                header("Location: equipos.php");
+            }else{
+
             }
         }
     ?>
