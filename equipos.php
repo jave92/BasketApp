@@ -6,14 +6,14 @@
     require 'Medoo.php';
     require '_includes/conexionMedoo.php';
 
-    if(isset($_POST["delete"])){
-        $nom = $_POST["clave"];
-        $database->delete('equipos',["nombre"=>$nom]);
+    if(isset($_GET["clave"])){
+        $id = $_GET["clave"];
+        $database->delete('equipos',["id"=>$id]);
         unset($_POST["delete"]);
         unset($_POST["clave"]);
     }
 
-    $result = $database->select("equipos", ["nombre", "ciudad", "numSocios", "anio"]);
+    $result = $database->select("equipos", "*");
 
     ?>
     <meta charset="UTF-8">
@@ -45,14 +45,13 @@
                     </tr>
                     <?php
                     foreach ($result as $fila){
-                        $clave = $fila["nombre"];
+                        $clave = $fila["id"];
                         echo "<tr>";
                         echo "<td>".$fila["nombre"]."</td>";
                         echo "<td>".$fila["ciudad"]."</td>";
                         echo "<td>".$fila["numSocios"]."</td>";
                         echo "<td>".$fila["anio"]."</td>";
-                        echo "<input type='hidden' name='clave' value='".$clave."'/>";
-                        echo "<td><input type='submit' name='delete' value='Eliminar'></td>";
+                        echo "<td><a href='equipos.php?clave=".$clave."'>Eliminar</a> | <a href='crear_equipo.php?clave=".$clave."& nombre=".$fila["nombre"]."& ciudad=".$fila["ciudad"]."& numSocios=".$fila["numSocios"]."& anio=".$fila["anio"]."'>Editar</a></td>";
                         echo "</tr>";
                     }
                     ?>

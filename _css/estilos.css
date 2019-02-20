@@ -447,10 +447,10 @@ input[type="number"] {
 }
 .tablaEquipos th{
     background: rgba(0,0,0,0.7);
-    font-size: 3vh;
+    /*font-size: 3vh;*/
 }
 .tablaEquipos td{
-    padding: 1vh;
+    /*padding: 0.1vh;*/
 }
 .tablaEquipos td a{
     cursor: pointer;

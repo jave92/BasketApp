@@ -3,6 +3,18 @@
 <head>
     <?php
     require_once ("./_includes/conexion.php");
+    $nombre="";
+    $ciudad="";
+    $numSocios=null;
+    $anio="";
+    if(isset($_GET["clave"])){
+        $id = $_GET["clave"];
+        $nombre = $_GET["nombre"];
+        $ciudad = $_GET["ciudad"];
+        $numSocios = $_GET["numSocios"];
+        $anio = $_GET["anio"];
+    }
+
     ?>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -22,24 +34,30 @@
                         </span>
             </div>
             <form name="login" action="crear_equipo.php" method="post" class="login-form">
+                <?php
+                    if(isset($_GET["clave"])){
+                        echo "<input type=\"hidden\" name='id' value='$id'>";
+                    }
+                ?>
+
                 <div class="wrap-input" data-validate="Introduce un nombre de liga">
                     <span class="label-input">Nombre</span>
-                    <input class="input" type="text" name="equipo" placeholder="Nombre del equipo" required>
+                    <input class="input" type="text" name="equipo" placeholder="Nombre del equipo" value="<?php echo $nombre?>" required>
                     <span class="focus-input"></span>
                 </div>
                 <div class="wrap-input" data-validate="Introduce el año">
                     <span class="label-input">Ciudad</span>
-                    <input class="input" type="text" name="ciudad" placeholder="Nombre de la ciudad" required>
+                    <input class="input" type="text" name="ciudad" placeholder="Nombre de la ciudad" value="<?php echo $ciudad?>" required>
                     <span class="focus-input"></span>
                 </div>
                 <div class="wrap-input" data-validate="Introduce la descripción">
                     <span class="label-input">Nº de Socios</span>
-                    <input class="input" type="text" name="socios" placeholder="Numero de socios" required>
+                    <input class="input" type="text" name="socios" placeholder="Numero de socios" value="<?php echo $numSocios?>" required>
                     <span class="focus-input"></span>
                 </div>
                 <div class="wrap-input" data-validate="Introduce la descripción">
                     <span class="label-input">Año</span>
-                    <input class="input" type="text" name="anio" placeholder="Año" required>
+                    <input class="input" type="text" name="anio" placeholder="Año" value="<?php echo $anio?>" required>
                     <span class="focus-input"></span>
                 </div>
                 <div class="container-login-form-btn">
@@ -55,12 +73,14 @@
         if(isset($_POST["guardar"])){
             if(!empty($_POST["equipo"]) && !empty($_POST["ciudad"]) && 
                 !empty($_POST["socios"]) && !empty($_POST["anio"])){
-                
-                $database->insert("equipos", ["nombre"=>$_POST["equipo"], "ciudad"=>$_POST["ciudad"], "numSocios"=>$_POST["socios"], "anio"=>$_POST["anio"]]);
+
+                if(isset($_POST["id"])){
+                    $database->update("equipos", ["nombre"=>$_POST["equipo"], "ciudad"=>$_POST["ciudad"], "numSocios"=>$_POST["socios"], "anio"=>$_POST["anio"]],["id"=>$_POST["id"]]);
+                }else{
+                    $database->insert("equipos", ["nombre"=>$_POST["equipo"], "ciudad"=>$_POST["ciudad"], "numSocios"=>$_POST["socios"], "anio"=>$_POST["anio"]]);
+                }
 
                 header("Location: equipos.php");
-            }else{
-
             }
         }
     ?>
