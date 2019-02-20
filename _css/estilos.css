@@ -415,10 +415,18 @@ input[type="number"] {
 
 .fixedButton{
     z-index: 10;
-    color: white;
+    color: #000;
     font-size: 3vh;
     position: absolute;
     left: 0px;
+    top: 0px;
+}
+.fixedLink{
+    z-index: 10;
+    color: white;
+    font-size: 3vh;
+    position: absolute;
+    right: 0px;
     top: 0px;
 }
 .fixedErrorMsg{

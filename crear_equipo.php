@@ -14,7 +14,6 @@
         $numSocios = $_GET["numSocios"];
         $anio = $_GET["anio"];
     }
-
     ?>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -25,7 +24,8 @@
     <title>Liga BasketApp</title>
 </head>
 <body>
-    <a href="cerrar_sesion.php" class="fixedButton">Cerrar sesión</a>
+    <input type="button" onclick="location.href='equipos.php'" class="fixedButton" value="volver atrás">
+    <a href="cerrar_sesion.php" class="fixedLink">Cerrar sesión</a>
     <div class="container-login">
         <section class="wrap-login">
             <div class="login-form-title">

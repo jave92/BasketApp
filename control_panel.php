@@ -13,7 +13,7 @@
     <title>Panel BasketApp</title>
 </head>
 <body>
-<a href="cerrar_sesion.php" class="fixedButton">Cerrar sesión</a>
+<a href="cerrar_sesion.php" class="fixedLink">Cerrar sesión</a>
 <div class="container-login">
     <section class="wrap-login">
         <div class="dashboard-title">

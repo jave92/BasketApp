@@ -25,7 +25,8 @@
     <title>Equipos BasketApp</title>
 </head>
 <body>
-<a href="cerrar_sesion.php" class="fixedButton">Cerrar sesión</a>
+<input type="button" onclick="location.href='control_panel.php'" class="fixedButton" value="volver atrás">
+<a href="cerrar_sesion.php" class="fixedLink">Cerrar sesión</a>
 <div class="container-equipos">
     <section class="wrap-equipos">
         <div class="equipos-title">
