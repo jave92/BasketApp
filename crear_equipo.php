@@ -50,15 +50,7 @@
     </div>
     <?php
         require 'Medoo.php';
-        use Medoo\Medoo;
-
-        $database = new Medoo([
-            'database_type' => 'mysql',
-            'database_name' => 'proyecto_hlc',
-            'server' => 'localhost',
-            'username' => 'root',
-            'password' => ''
-        ]);
+        require '_includes/conexionMedoo.php';
 
         if(isset($_POST["guardar"])){
             if(!empty($_POST["equipo"]) && !empty($_POST["ciudad"]) && 

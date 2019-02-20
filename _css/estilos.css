@@ -452,6 +452,9 @@ input[type="number"] {
 .tablaEquipos td{
     padding: 1vh;
 }
+.tablaEquipos td a{
+    cursor: pointer;
+}
 .tablaEquipos tr{
     border-bottom: 1px solid black;
 }

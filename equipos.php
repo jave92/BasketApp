@@ -4,16 +4,17 @@
     <?php
     require_once ("./_includes/conexion.php");
     require 'Medoo.php';
-    use Medoo\Medoo;
+    require '_includes/conexionMedoo.php';
 
-    $database = new Medoo([
-        'database_type' => 'mysql',
-        'database_name' => 'proyecto_hlc',
-        'server' => 'localhost',
-        'username' => 'root',
-        'password' => ''
-    ]);
+    if(isset($_POST["delete"])){
+        $nom = $_POST["clave"];
+        $database->delete('equipos',["nombre"=>$nom]);
+        unset($_POST["delete"]);
+        unset($_POST["clave"]);
+    }
+
     $result = $database->select("equipos", ["nombre", "ciudad", "numSocios", "anio"]);
+
     ?>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -33,26 +34,30 @@
             </span>
         </div>
         <div class="wrap-tablaEquipos">
-            <table class="tablaEquipos">
-                <tr>
-                    <th>Nombre</th>
-                    <th>Ciudad</th>
-                    <th>Nº Socios</th>
-                    <th>Año</th>
-                    <th></th>
-                </tr>
-                <?php
-                foreach ($result as $fila){
-                    echo "<tr>";
-                    echo "<td>".$fila["nombre"]."</td>";
-                    echo "<td>".$fila["ciudad"]."</td>";
-                    echo "<td>".$fila["numSocios"]."</td>";
-                    echo "<td>".$fila["anio"]."</td>";
-                    echo "<td>Eliminar/Editar</td>";
-                    echo "</tr>";
-                }
-                ?>
-            </table>
+            <form action="equipos.php" method="post">
+                <table class="tablaEquipos">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Ciudad</th>
+                        <th>Nº Socios</th>
+                        <th>Año</th>
+                        <th></th>
+                    </tr>
+                    <?php
+                    foreach ($result as $fila){
+                        $clave = $fila["nombre"];
+                        echo "<tr>";
+                        echo "<td>".$fila["nombre"]."</td>";
+                        echo "<td>".$fila["ciudad"]."</td>";
+                        echo "<td>".$fila["numSocios"]."</td>";
+                        echo "<td>".$fila["anio"]."</td>";
+                        echo "<input type='hidden' name='clave' value='".$clave."'/>";
+                        echo "<td><input type='submit' name='delete' value='Eliminar'></td>";
+                        echo "</tr>";
+                    }
+                    ?>
+                </table>
+            </form>
         </div>
         <div class="container-equipos-btn">
             <button class="equipos-btn" onclick="location.href='crear_equipo.php'">Crear equipo</button>
