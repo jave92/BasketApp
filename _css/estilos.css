@@ -414,20 +414,23 @@ input[type="number"] {
 }
 
 .fixedButton{
-    z-index: 10;
-    color: #000;
-    font-size: 3vh;
+    z-index: 100;
+    color: #fff;
+    font-size: 5vh;
     position: absolute;
     left: 0px;
     top: 0px;
+    cursor: pointer;
+    padding: 1%;
 }
 .fixedLink{
     z-index: 10;
     color: white;
-    font-size: 3vh;
+    font-size: 5vh;
     position: absolute;
     right: 0px;
     top: 0px;
+    padding: 1%;
 }
 .fixedErrorMsg{
     color: white;

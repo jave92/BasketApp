@@ -10,10 +10,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="_css/estilos.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <title>Panel BasketApp</title>
 </head>
 <body>
-<a href="cerrar_sesion.php" class="fixedLink">Cerrar sesión</a>
+<a href="cerrar_sesion.php"><i class="fixedLink fas fa-sign-out-alt"></i></a>
 <div class="container-login">
     <section class="wrap-login">
         <div class="dashboard-title">
