@@ -53,7 +53,7 @@
                         echo "<td>".$fila["ciudad"]."</td>";
                         echo "<td>".$fila["numSocios"]."</td>";
                         echo "<td>".$fila["anio"]."</td>";
-                        echo "<td><a href='equipos.php?clave=".$clave."'>Eliminar</a> | <a href='crear_equipo.php?clave=".$clave."& nombre=".$fila["nombre"]."& ciudad=".$fila["ciudad"]."& numSocios=".$fila["numSocios"]."& anio=".$fila["anio"]."'>Editar</a></td>";
+                        echo "<td><a href='crear_equipo.php?clave=".$clave."& nombre=".$fila["nombre"]."& ciudad=".$fila["ciudad"]."& numSocios=".$fila["numSocios"]."& anio=".$fila["anio"]."'><i class=\"fas fa-edit\"></i></a> | <a href='equipos.php?clave=".$clave."'><i class=\"fas fa-trash-alt\"></i></a></td>";
                         echo "</tr>";
                     }
                     ?>

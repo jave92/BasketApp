@@ -34,7 +34,7 @@
                 </span>
             </div>
             <div class="dashboard-resultados">
-                <span class="dashboard-text">
+                <span class="dashboard-text" onclick="location.href='resultados.php'">
                     Resultados
                 </span>
             </div>

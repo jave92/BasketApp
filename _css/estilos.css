@@ -458,6 +458,7 @@ input[type="number"] {
 }
 .tablaEquipos th{
     background: rgba(0,0,0,0.7);
+    width: 10%;
     /*font-size: 3vh;*/
 }
 .tablaEquipos td{
@@ -468,6 +469,10 @@ input[type="number"] {
 }
 .tablaEquipos tr{
     border-bottom: 1px solid black;
+}
+.columnaVisitantes{
+    background: rgba(0,0,0,0.7);
+    width: 10%;
 }
 /*------------------------------------------------------------------
 [ Responsive ]*/
