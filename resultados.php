@@ -5,14 +5,7 @@
     require_once ("./_includes/conexion.php");
     require 'Medoo.php';
     require '_includes/conexionMedoo.php';
-//
-//    if(isset($_GET["clave"])){
-//        $id = $_GET["clave"];
-//        $database->delete('equipos',["id"=>$id]);
-//        unset($_POST["delete"]);
-//        unset($_POST["clave"]);
-//    }
-//
+
     $equipos = $database->select("equipos", "*");
 
     ?>
@@ -76,11 +69,6 @@
                                     }
                                 echo "</a></td>";
                             }
-//                            select resultados where visitante=equipovisitante
-//                        echo "<td>".$fila["ciudad"]."</td>";
-//                        echo "<td>".$fila["numSocios"]."</td>";
-//                        echo "<td>".$fila["anio"]."</td>";
-//                        echo "<td><a href='equipos.php?clave=".$clave."'>Eliminar</a> | <a href='crear_equipo.php?clave=".$clave."& nombre=".$fila["nombre"]."& ciudad=".$fila["ciudad"]."& numSocios=".$fila["numSocios"]."& anio=".$fila["anio"]."'>Editar</a></td>";
                         echo "</tr>";
                     }
                     ?>
