@@ -58,7 +58,7 @@
                         echo "<tr>";
                             echo "<td class='columnaVisitantes'>".$equipoVisitante["nombre"]."</td>";
                             foreach ($equipos as $equipoLocal){
-                                echo "<td id=".$equipoVisitante['nombre']."-".$equipoLocal["nombre"]."><a href='aniadir_resultado.php?visitante=".$equipoVisitante["nombre"]."& local=".$equipoLocal["nombre"]."'>";
+                                echo "<td id=\"".str_replace(' ', '', $equipoVisitante['nombre'])."-".str_replace(' ', '', $equipoLocal['nombre'])."\"><a href='aniadir_resultado.php?visitante=".$equipoVisitante["nombre"]."& local=".$equipoLocal["nombre"]."'>";
                                     if(in_array($equipoLocal["nombre"],$rivales)){
                                         foreach ($resultados as $resultado){
                                             if($resultado["local"]==$equipoLocal["nombre"]){
@@ -68,7 +68,7 @@
                                     }else{
                                         if($equipoVisitante["id"] == $equipoLocal["id"]){
                                             echo "<script>";
-                                            echo "$(\"#".$equipoVisitante['nombre']."-".$equipoLocal["nombre"]."\").css(\"background-color\", \"rgba(255,255,255,0.3)\");";
+                                            echo "$(\"#".str_replace(' ', '', $equipoVisitante['nombre'])."-".str_replace(' ', '', $equipoLocal['nombre'])."\").css(\"background-color\", \"rgba(255,255,255,0.3)\");";
                                             echo "</script>";
                                         }else{
                                             echo "<i class=\"fas fa-plus-circle\" style='width: 100%'></i>";
