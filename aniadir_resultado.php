@@ -56,10 +56,10 @@
                 <select name="eqLocal">
                     <?php
                         if(isset($_GET["local"])){
-                            echo "<option value=".$_GET["local"].">".$_GET["local"]."</option>";
+                            echo "<option value=\"".$_GET["local"]."\">".$_GET["local"]."</option>";
                         }else{
                             foreach ($equipos as $equipo){
-                                echo "<option value=".$equipo["nombre"].">".$equipo["nombre"]."</option>";
+                                echo "<option value=\"".$equipo["nombre"]."\">".$equipo["nombre"]."</option>";
                             }
                         }
 
@@ -77,10 +77,10 @@
                 <select name="eqVisit">
                     <?php
                         if(isset($_GET["visitante"])){
-                            echo "<option value=".$_GET["visitante"].">".$_GET["visitante"]."</option>";
+                            echo "<option value=\"".$_GET["visitante"]."\">".$_GET["visitante"]."</option>";
                         }else {
                             foreach ($equipos as $equipo) {
-                                echo "<option value=" . $equipo["nombre"] . ">" . $equipo["nombre"] . "</option>";
+                                echo "<option value=\"" . $equipo["nombre"] . "\">" . $equipo["nombre"] . "</option>";
                             }
                         }
                     ?>
